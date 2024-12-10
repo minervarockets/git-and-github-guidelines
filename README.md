@@ -7,14 +7,16 @@ Este guia explica como contribuir de forma rápida e consistente.
 ## 🚀 Como Contribuir
 
 1. **Crie uma Issue**:  
-   Abra uma **issue** descrevendo o que você quer fazer (feature, bugfix, melhoria).
+   No GitHub, vá em `Issues` > `New issue` e descreva o que você quer fazer (feature, bugfix, melhoria) e salve.
 
 2. **Crie uma Branch**:  
-   Nomeie a branch com o número da issue:  
+   Abra a página do issue (abre automaticamente quando é criado) e, em `Development`, clique em `Create a branch`. Mantenha o nome padrão, deve ser parecido com `42-adicionar-modulo-telemetria`.
+
+   E execute os comandos para alterar a branch localmente na sua máquina:
    ```bash
+   git fetch origin
    git checkout -b <numero-da-issue>-<titulo>
    ```
-   **Exemplo**: `42-adicionar-modulo-telemetria`
 
 3. **Faça Commits**:  
    Use mensagens de commit claras:  
