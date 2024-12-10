@@ -1,102 +1,102 @@
-# Bem-vindo(a) ao Guia de Contribuição do Minerva Sats! :sattelite: :rocket:
+```markdown
+# 🛰️ Guia de Contribuição — Minerva Aeroespacial 🚀
 
-Olá, futur@ Satéliter! :wave:  
-Antes de apertar o botão de **merge**, queremos te dar as boas-vindas e apresentar nosso manual de contribuição. Aqui você vai aprender a colaborar com nossos repositórios, entender a lógica por trás do nosso fluxo de desenvolvimento e, de quebra, ver um pouco de gramática formal aplicada às nossas convenções de nomenclatura de branches, PRs e commits!
+Este guia explica como contribuir de forma rápida e consistente.
 
-## Por que esse guia?
+---
 
-A **Minerva Sats** é fruto do esforço de um grupo estudantil apaixonado por engenharia, ciência e, claro, espaço sideral! Desenvolvemos nanosatélites Cubesats universitários e para isso precisamos de um ecossistema de código bem organizado, claro e consistente. Este guia serve para:
+## 🚀 Como Contribuir
 
-- Padronizar a contribuição no repositório.
-- Facilitar a compreensão do histórico do projeto.
-- Promover um ambiente acolhedor para novos colaboradores.
+1. **Crie uma Issue**:  
+   Abra uma **issue** descrevendo o que você quer fazer (feature, bugfix, melhoria).
 
-## Como Contribuir
+2. **Crie uma Branch**:  
+   Nomeie a branch com o número da issue:  
+   ```bash
+   git checkout -b <numero-da-issue>-<titulo>
+   ```
+   **Exemplo**: `42-adicionar-modulo-telemetria`
 
-1. **Criação de Issue:** Encontrou um ponto de melhoria ou foi designada uma tarefa? Abra uma **issue**. As issues são o ponto de partida de tudo.
-2. **Branch por Issue:** Cada branch deve estar associada a uma issue. Isso facilita o tracking e garante que o histórico de desenvolvimento permaneça claro.
-3. **Commits e PRs Claros:** Mensagens de commit e nomes de PR devem ser descritivos. A ideia é que qualquer pessoa que leia o histórico consiga entender rapidamente o que foi feito.
-4. **Tests & Reviews:** Antes de criar seu Pull Request, garanta que o código está testado e funcional. Espere a revisão dos(as) mantenedores(as) e faça ajustes se necessário.
-5. **Merge:** Após a aprovação, faça o merge e celebre mais um passo rumo ao infinito e além! :tada:
+3. **Faça Commits**:  
+   Use mensagens de commit claras:  
+   ```bash
+   feat(sensor): adicionar módulo de telemetria
+   ```
 
-## Convenções de Nomenclatura
+4. **Crie um Pull Request**:  
+   Nomeie o PR com referência à issue:  
+   ```
+   PR#42: Adicionar módulo de telemetria
+   ```
 
-Usaremos a BNF (Backus-Naur Form) para definir a gramática das nossas convenções. Porque todo mundo adora um pouquinho de formalismo, não é mesmo? :nerd_face:
+5. **Tests & Reviews**:  
+   Teste seu código e aguarde a revisão antes do merge.
 
-### Branches
+---
 
-A regra é simples: toda branch deve estar associada a uma issue. Suponha que a issue #42 seja sobre implementar um novo sensor. Então a branch poderia se chamar:
+## 🧩 Convenções
 
-`42-implementar-novo-sensor`
-
-#### BNF para Branches
+### 🔀 Branches
 
 ```bnf
-<branch> ::= <issue-number> "-" <branch-title>
-<issue-number> ::= <digit> {<digit>}
-<branch-title> ::= <lowercase> {<lowercase> | "-"}
+<nome-da-branch> ::= <numero-da-issue>-<titulo>
 
-<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<numero-da-issue> ::= <digito> {<digito>}
+<titulo> ::= <lowercase> {<lowercase> | "-"}
+
+<digito> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 <lowercase> ::= "a" | "b" | "c" | ... | "z"
 ```
+**Exemplo**: `14-corrigir-bug-calculo-orbita`
 
-**Exemplo:**
-- `14-fixar-bug-de-downtilt`
-- `27-adicionar-telemetria`
-
-
-### Pull Requests
-
-A ideia é que o PR já deixe claro a que issue se refere e o que está sendo resolvido. Algo como:
-
-`PR#42: Implementar novo sensor`
-
-#### BNF para PR
+### 📜 Commits
 
 ```bnf
-<pr-title> ::= "PR#" <issue-number> ":" <pr-desc>
-<pr-desc> ::= <word> {<word>}
+<mensagem> ::= <tipo>(<escopo>): <descrição>
 
-<word> ::= <lowercase> {<lowercase>}
+<tipo>      ::= "feat" | "fix" | "docs" | "style" | "refactor" | "test" | "chore"
+<escopo>    ::= <palavra>
+<descrição> ::= <palavra> {<palavra>}
+
+<palavra> ::= <lowercase> {<lowercase>}
 ```
 
-**Exemplo:**
-- `PR#14: Fixar bug de downtilt`
-- `PR#27: Adicionar telemetria`
+- **Exemplo**: `fix(antena): corrigir indexação`
 
-### Commits
-
-Para commits, inspiramo-nos no padrão do [Conventional Commits](https://www.conventionalcommits.org/), mas você é livre para criar o escopo e descrição de forma clara. Exemplo:
-
-`feat(sensor): adicionar módulo de telemetria`
-
-#### BNF para Commits
+### 🔧 Pull Requests
 
 ```bnf
-<commit-message> ::= <type> "(" <scope> "): " <description>
-
-<type> ::= "feat" | "fix" | "docs" | "style" | "refactor" | "test" | "chore"
-<scope> ::= <word>
-<description> ::= <word> {<word>}
-
-<word> ::= <lowercase> {<lowercase>}
+<nome-do-pr> ::= "PR#" <numero-da-issue> ":" <descrição>
+<descrição> ::= <palavra> {<palavra>}
 ```
+**Exemplo**: `PR#27: Melhorar algoritmo de navegação`
 
-**Exemplo:**
-- `fix(antena): corrigir indexação do array de potência`
-- `feat(navegacao): adicionar cálculo de órbita`
+---
 
+## 📊 Diagramas de GitFlow
 
-## Referências e Inspirações
+Aqui estão os diagramas de sequência para nossos processos de contribuição:
 
-- [Guia Oficial de Contribuição do GitHub](https://docs.github.com/pt/contributing-to-projects)  
-- [Conventional Commits](https://www.conventionalcommits.org/)  
-- [Contributor Covenant](https://www.contributor-covenant.org/)  
-- [GitLab Workflow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
+- **Gitflow Geral**:  
+  ![GitFlow](./diagrams/build/gitflow.png)
 
+- **Ciclo de Desenvolvimento**:  
+  ![Ciclo de Desenvolvimento](./diagrams/build/ciclo_desenvolvimento.png)
 
-## Dúvidas?
+- **Revisando Pull Request**:  
+  ![Fluxo de PR](./diagrams/build/revisando_pr.png)
 
-Ficou com alguma dúvida? Fale com seu gerente ou dê um grito no nosso Discord. Teremos o maior prazer em ajudar!
+### Compilando os Diagramas
 
-**Avante!** :satellite:  
+Eles foram feitos usando o PlantUML. Para compilar, basta instalar o PlantUML com `sudo apt install PlantUML -y` e executar o comando `make` para buildar as imagens.
+
+- Se quiser uma documentação melhor de como compilar, sugiro o [repositório de diagramas de COM](https://github.com/minervarockets/pmm-com-activity-diagrams).
+
+- Se quiser saber como criar um diagrama, veja o site do [PlantUML](https://plantuml.com/activity-diagram-beta).
+---
+
+## 🛰️ Vamos Lançar Código!
+
+Obrigado por contribuir com a **Minerva Sats**! Se tiver dúvidas, fale com sua gerência ou dê um grito no Discord.
+**Avante!** 🚀🛰️ 
+```

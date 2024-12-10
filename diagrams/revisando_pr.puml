@@ -1,0 +1,15 @@
+@startuml
+title Revisão de Pull Request - Minerva Sats 
+
+|Github.com|
+start
+:Chegada de PR;
+
+|Git (local)|
+:Execução da Revisão de PR;
+
+|Github.com|
+:Escrita de comentários;
+stop
+
+@enduml
