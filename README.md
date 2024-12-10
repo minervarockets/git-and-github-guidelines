@@ -1,4 +1,3 @@
-```markdown
 # 🛰️ Guia de Contribuição — Minerva Aeroespacial 🚀
 
 Este guia explica como contribuir de forma rápida e consistente.
@@ -99,4 +98,3 @@ Eles foram feitos usando o PlantUML. Para compilar, basta instalar o PlantUML co
 
 Obrigado por contribuir com a **Minerva Sats**! Se tiver dúvidas, fale com sua gerência ou dê um grito no Discord.
 **Avante!** 🚀🛰️ 
-```
