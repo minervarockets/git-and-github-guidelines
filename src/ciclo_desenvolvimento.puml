@@ -1,0 +1,42 @@
+@startuml
+title Ciclo de Desenvolvimento - Minerva Sats
+
+|Github.com|
+:Início do Ciclo de Desenvolvimento;
+start
+:Criação de issue;
+:Criação da branch XPTO associada ao issue;
+
+|Git (local)|
+repeat
+
+if (Tem o repositório localmente?) then (não)
+  :Clona o repositório;
+  else (sim)
+endif
+
+if (Está na branch XPTO?) then (não)
+  :Altera a branch de trabalho para XPTO;
+else (sim)
+endif
+
+repeat 
+  :Atualiza a versão local;
+  if (Gerou conflito?) then (sim)
+    :Execução de Resolvendo Conflitos;
+  else (não)
+  endif
+  :Desenvolvimento de código;
+  :Commit;
+  :Atualiza a versão remota com as modificações locais;
+repeat while (Resolve o problema que a branch se propõe a resolver?) is (não) not (sim)
+
+|Github.com|
+:Criação de PR da branch associada ao issue para a main;
+:Execução de Revisando Pull Request;
+
+repeat while(Aprovado?) is (não) not (sim)
+
+stop
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+title GitFlow - Minerva Sats 
+
+start
+
+:Criação do repositório;
+repeat
+  :Execução do Ciclo de Desenvolvimento;
+  if (Modificação foi grande?) then (sim)
+    :Nova release;
+  else (não)
+  endif
+repeat while (Repositório tem utilidade?) is (sim) not (não)
+:Arquiva o repositório;
+stop
+
+@enduml
